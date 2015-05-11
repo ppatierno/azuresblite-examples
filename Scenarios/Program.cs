@@ -14,25 +14,6 @@ namespace IoTVenice
 #if NETMF
     class Program
     {
-        static string SB_NAMESPACE = "sb://ppatiernoeventhubs.servicebus.windows.net";
-        static string SB_CONNECTION_STRING = "Endpoint=sb://ppatiernoeventhubs.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=zyrR1I/Nl6zWpNZJob/BUsIDTXanbyoDfuyaFqlkpgk=";
-
-        static string EVENT_HUB_NAME = "ppatiernoeventhub";
-        static string EVENT_HUB_PARTITION_ID = "0";
-        static string EVENT_HUB_PARTITION_KEY = "mykey";
-        static string EVENT_HUB_PARTITION_OFFSET = "10000";
-        static string EVENT_HUB_PUBLISHER_NAME = "device1";
-
-        static string QUEUE_SEND = "q1";
-        static string QUEUE_REPLYTO = "q2";
-        static string TOPIC_SEND = "t1";
-        static string SUBSCRIPTION_ONE = "s1";
-        static string SUBSCRIPTION_TWO = "s2";
-
-        static string SHARED_ACCESS_KEY_NAME = "EventSendKeyName";
-        static string SHARED_ACCESS_KEY = "6yBMrTiHeMBXhrYHixtu2Y6u4/mRfiNvRH3TttqXW/w=";
-
-        /*
         static string SB_NAMESPACE = "[SB_NAMESPACE]";
         static string SB_CONNECTION_STRING = "[SB_CONNECTION_STRING]";
 
@@ -50,8 +31,7 @@ namespace IoTVenice
 
         static string SHARED_ACCESS_KEY_NAME = "[SHARED_ACCESS_KEY_NAME]";
         static string SHARED_ACCESS_KEY = "[SHARED_ACCESS_KEY]";
-        */
-
+        
         static AutoResetEvent networkAvailableEvent = new AutoResetEvent(false);
         static AutoResetEvent networkAddressChangedEvent = new AutoResetEvent(false);
 
@@ -138,25 +118,6 @@ namespace IoTVenice
 #else
     class Program
     {
-        static string SB_NAMESPACE = "sb://ppatiernoeventhubs.servicebus.windows.net";
-        static string SB_CONNECTION_STRING = "Endpoint=sb://ppatiernoeventhubs.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=zyrR1I/Nl6zWpNZJob/BUsIDTXanbyoDfuyaFqlkpgk=";
-
-        static string EVENT_HUB_NAME = "ppatiernoeventhub";
-        static string EVENT_HUB_PARTITION_ID = "0";
-        static string EVENT_HUB_PARTITION_KEY = "mykey";
-        static string EVENT_HUB_PARTITION_OFFSET = "10000";
-        static string EVENT_HUB_PUBLISHER_NAME = "device1";
-
-        static string QUEUE_SEND = "q1";
-        static string QUEUE_REPLYTO = "q2";
-        static string TOPIC_SEND = "t1";
-        static string SUBSCRIPTION_ONE = "s1";
-        static string SUBSCRIPTION_TWO = "s2";
-
-        static string SHARED_ACCESS_KEY_NAME = "EventSendKeyName";
-        static string SHARED_ACCESS_KEY = "6yBMrTiHeMBXhrYHixtu2Y6u4/mRfiNvRH3TttqXW/w=";
-
-        /*
         static string SB_NAMESPACE = "[SB_NAMESPACE]";
         static string SB_CONNECTION_STRING = "[SB_CONNECTION_STRING]";
 
@@ -174,8 +135,7 @@ namespace IoTVenice
 
         static string SHARED_ACCESS_KEY_NAME = "[SHARED_ACCESS_KEY_NAME]";
         static string SHARED_ACCESS_KEY = "[SHARED_ACCESS_KEY]";
-        */
-
+        
         static void Main(string[] args)
         {
             Amqp.Trace.TraceLevel = Amqp.TraceLevel.Frame | Amqp.TraceLevel.Verbose;
