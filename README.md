@@ -8,7 +8,7 @@ Current examples are for :
 
 To build these examples you need following libraries, you can clone from following repositories :
 
-AMQP SB Lite : https://azuresblite.codeplex.com
+AMQP SB Lite : http://azuresblite.codeplex.com
 
 AMQP .Net Lite : http://amqpnetlite.codeplex.com/
 
