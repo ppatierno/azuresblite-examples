@@ -1,6 +1,6 @@
 using System.Threading;
 
-namespace IoTVenice
+namespace AzureSBLite.Examples
 {
     public delegate void ParameterizedWorkerThreadStart(object status);
 

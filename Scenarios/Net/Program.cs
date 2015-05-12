@@ -1,7 +1,6 @@
 ﻿using Amqp;
 using System;
-using System.Threading;
-using Microsoft.SPOT;
+using System.Diagnostics;
 
 namespace AzureSBLite.Examples
 {
@@ -25,26 +24,11 @@ namespace AzureSBLite.Examples
         static string SHARED_ACCESS_KEY_NAME = "[SHARED_ACCESS_KEY_NAME]";
         static string SHARED_ACCESS_KEY = "[SHARED_ACCESS_KEY]";
         
-        static AutoResetEvent networkAvailableEvent = new AutoResetEvent(false);
-        static AutoResetEvent networkAddressChangedEvent = new AutoResetEvent(false);
-
         static void Main(string[] args)
         {
             Amqp.Trace.TraceLevel = Amqp.TraceLevel.Frame | Amqp.TraceLevel.Verbose;
             Amqp.Trace.TraceListener = (f, a) => Debug.Print(DateTime.Now.ToString("[hh:ss.fff]") + " " + Fx.Format(f, a));
 
-            Microsoft.SPOT.Net.NetworkInformation.NetworkChange.NetworkAvailabilityChanged += NetworkChange_NetworkAvailabilityChanged;
-            Microsoft.SPOT.Net.NetworkInformation.NetworkChange.NetworkAddressChanged += NetworkChange_NetworkAddressChanged;
-            
-            networkAvailableEvent.WaitOne();
-            Debug.Print("link is up!");
-            networkAddressChangedEvent.WaitOne();
-            Debug.Print("address acquired: " + Microsoft.SPOT.Net.NetworkInformation.NetworkInterface.GetAllNetworkInterfaces()[0].IPAddress);
-
-            Debug.Print("\r\n*** GET NETWORK INTERFACE SETTINGS ***");
-            Microsoft.SPOT.Net.NetworkInformation.NetworkInterface[] networkInterfaces = Microsoft.SPOT.Net.NetworkInformation.NetworkInterface.GetAllNetworkInterfaces();
-            Debug.Print("Found " + networkInterfaces.Length + " network interfaces.");
-            
             Scenarios scenarios = new Scenarios();
             scenarios.ConnectionString = SB_CONNECTION_STRING;
 
@@ -89,22 +73,7 @@ namespace AzureSBLite.Examples
                 SUBSCRIPTION_ONE, 
                 SUBSCRIPTION_TWO);
 
-            Thread.Sleep(Timeout.Infinite);
-        }
-
-        static void NetworkChange_NetworkAddressChanged(object sender, EventArgs e)
-        {
-            Debug.Print("NetworkAddressChanged");
-            networkAddressChangedEvent.Set();
-        }
-
-        static void NetworkChange_NetworkAvailabilityChanged(object sender, Microsoft.SPOT.Net.NetworkInformation.NetworkAvailabilityEventArgs e)
-        {
-            Debug.Print("NetworkAvailabilityChanged " + e.IsAvailable);
-            if (e.IsAvailable)
-            {
-                networkAvailableEvent.Set();
-            }
+            Console.ReadKey();
         }
     }
 }

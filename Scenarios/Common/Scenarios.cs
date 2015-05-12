@@ -4,15 +4,10 @@ using System;
 using System.IO;
 using System.Text;
 
-namespace IoTVenice
+namespace AzureSBLite.Examples
 {
     public class Scenarios
     {
-        // Azure Service Bus SDK
-        //private string connectionString = "Endpoint=sb://iotvenice.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=v2FzDtp+s6eTPlg6LaPq3AXeDFm94fqZ0LiuJRrwQLY=";
-
-        //private string connectionString = "Endpoint=sb://ppatiernoeventhubs.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=zyrR1I/Nl6zWpNZJob/BUsIDTXanbyoDfuyaFqlkpgk=";
-
         public string ConnectionString { get; set; }
 
         public void Scenario1_EventHubSend(string eventHubEntity)
