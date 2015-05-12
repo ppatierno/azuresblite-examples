@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzureSBLite.WinRT", "..\azu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scenarios.WinRT", "Scenarios\WinRT\Scenarios.WinRT.csproj", "{8D488B53-78E4-4193-BEED-213AD9B4B8DD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoTEventHubProcessor", "IoTEventHubProcessor\IoTEventHubProcessor.csproj", "{79B03D9D-9277-4B08-B330-B096D4F40928}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -179,6 +181,16 @@ Global
 		{8D488B53-78E4-4193-BEED-213AD9B4B8DD}.Release|x86.ActiveCfg = Release|x86
 		{8D488B53-78E4-4193-BEED-213AD9B4B8DD}.Release|x86.Build.0 = Release|x86
 		{8D488B53-78E4-4193-BEED-213AD9B4B8DD}.Release|x86.Deploy.0 = Release|x86
+		{79B03D9D-9277-4B08-B330-B096D4F40928}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79B03D9D-9277-4B08-B330-B096D4F40928}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79B03D9D-9277-4B08-B330-B096D4F40928}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{79B03D9D-9277-4B08-B330-B096D4F40928}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{79B03D9D-9277-4B08-B330-B096D4F40928}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{79B03D9D-9277-4B08-B330-B096D4F40928}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79B03D9D-9277-4B08-B330-B096D4F40928}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79B03D9D-9277-4B08-B330-B096D4F40928}.Release|ARM.ActiveCfg = Release|Any CPU
+		{79B03D9D-9277-4B08-B330-B096D4F40928}.Release|x64.ActiveCfg = Release|Any CPU
+		{79B03D9D-9277-4B08-B330-B096D4F40928}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
