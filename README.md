@@ -9,7 +9,7 @@ WinRT
 
 Simple scenarios covered are :
 
-Simple send to Event Hub 
+* Simple send to Event Hub 
 Send to Event Hub to a specific partition 
 Send to Event Hub to a publisher 
 Send to Event Hub to a publisher with token 
