@@ -41,24 +41,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\Common\Scenarios.cs">
+      <Link>Scenarios.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\WorkerThread.cs">
+      <Link>WorkerThread.cs</Link>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Scenarios.cs" />
-    <Compile Include="WorkerThread.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\amqpnetlite\src\Amqp.Net.csproj">
+    <ProjectReference Include="..\..\..\amqpnetlite\src\Amqp.Net.csproj">
       <Project>{92153715-1d99-43b1-b291-470cf91a156d}</Project>
       <Name>Amqp.Net</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\azuresblite\AzureSBLite\AzureSBLite.Net.csproj">
+    <ProjectReference Include="..\..\..\azuresblite\AzureSBLite\AzureSBLite.Net.csproj">
       <Project>{64d163d1-e433-4b60-9a43-fcfc2e92ad50}</Project>
       <Name>AzureSBLite.Net</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

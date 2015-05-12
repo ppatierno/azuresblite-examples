@@ -15,9 +15,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amqp.NetMF43", "..\amqpnetl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzureSBLite.NetMf43", "..\azuresblite\AzureSBLite\AzureSBLite.NetMf43.csproj", "{0753D770-B230-4195-BA31-53B0DBCC0AD6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scenarios.Net", "Scenarios\Scenarios.Net.csproj", "{0BE9B094-6B44-4DF8-B98A-33E009D18A8B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scenarios.Net", "Scenarios\Net\Scenarios.Net.csproj", "{0BE9B094-6B44-4DF8-B98A-33E009D18A8B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scenarios.NetMf43", "Scenarios\Scenarios.NetMf43.csproj", "{17343875-4021-4069-8753-33F9ED25654A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scenarios.NetMf43", "Scenarios\NetMf43\Scenarios.NetMf43.csproj", "{17343875-4021-4069-8753-33F9ED25654A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

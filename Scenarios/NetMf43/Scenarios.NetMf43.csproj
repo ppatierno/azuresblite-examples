@@ -29,10 +29,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="..\Common\Scenarios.cs">
+      <Link>Scenarios.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\WorkerThread.cs">
+      <Link>WorkerThread.cs</Link>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
-    <Compile Include="Scenarios.cs" />
-    <Compile Include="WorkerThread.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.SPOT.Native" />
@@ -46,11 +50,11 @@
     <Reference Include="System.Net.Security" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\amqpnetlite\src\Amqp.NetMF43.csproj">
+    <ProjectReference Include="..\..\..\amqpnetlite\src\Amqp.NetMF43.csproj">
       <Project>{5D8F78FC-0719-495F-9AD0-1EDD7EC9AA19}</Project>
       <Name>Amqp.NetMF43</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\azuresblite\AzureSBLite\AzureSBLite.NetMf43.csproj">
+    <ProjectReference Include="..\..\..\azuresblite\AzureSBLite\AzureSBLite.NetMf43.csproj">
       <Project>{0753D770-B230-4195-BA31-53B0DBCC0AD6}</Project>
       <Name>AzureSBLite.NetMf43</Name>
     </ProjectReference>

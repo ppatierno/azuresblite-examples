@@ -1,11 +1,8 @@
-using Amqp;
-using Amqp.Framing;
 using ppatierno.AzureSBLite;
 using ppatierno.AzureSBLite.Messaging;
 using System;
 using System.IO;
 using System.Text;
-using System.Threading;
 
 namespace IoTVenice
 {
