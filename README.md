@@ -22,8 +22,8 @@ Simple scenarios covered are :
 
 To build these examples you need following libraries, you can clone from following repositories :
 
-* AMQP SB Lite : http://azuresblite.codeplex.com
+* *AMQP SB Lite* : http://azuresblite.codeplex.com
 
-* AMQP .Net Lite : http://amqpnetlite.codeplex.com/
+* *AMQP .Net Lite* : http://amqpnetlite.codeplex.com/
 
 The .Net Micro Framework project is build for running on Netduino 3 Wi-Fi.
