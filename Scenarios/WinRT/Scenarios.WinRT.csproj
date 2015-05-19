@@ -102,17 +102,6 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
-    <ProjectReference Include="..\..\..\amqpnetlite\src\Amqp.Store.csproj">
-      <Project>{647aac43-dc4a-47f0-8c07-e0da2c312b30}</Project>
-      <Name>Amqp.Store</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\azuresblite\AzureSBLite\AzureSBLite.WinRT.csproj">
-      <Project>{bf8ae4d9-1257-43fb-a58d-8e9bb6de099b}</Project>
-      <Name>AzureSBLite.WinRT</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="..\Common\Scenarios.cs">
       <Link>Scenarios.cs</Link>
     </Compile>
@@ -131,6 +120,7 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
+    <None Include="packages.config" />
     <None Include="Scenarios.WinRT_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
@@ -150,6 +140,17 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\azuresblite\AzureSBLite\WinRT\AzureSBLite.WinRT.csproj">
+      <Project>{bf8ae4d9-1257-43fb-a58d-8e9bb6de099b}</Project>
+      <Name>AzureSBLite.WinRT</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Amqp.Store">
+      <HintPath>..\..\packages\AMQPNetLite.1.0.0\lib\windows8\Amqp.Store.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">
     <VisualStudioVersion>12.0</VisualStudioVersion>
