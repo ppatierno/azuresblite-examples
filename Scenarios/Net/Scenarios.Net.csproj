@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Amqp.Net">
+      <HintPath>..\..\packages\AMQPNetLite.1.0.0\lib\net\Amqp.Net.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -54,18 +57,14 @@
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\amqpnetlite\src\Amqp.Net.csproj">
-      <Project>{92153715-1d99-43b1-b291-470cf91a156d}</Project>
-      <Name>Amqp.Net</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\azuresblite\AzureSBLite\AzureSBLite.Net.csproj">
+    <ProjectReference Include="..\..\..\azuresblite\AzureSBLite\Net\AzureSBLite.Net.csproj">
       <Project>{64d163d1-e433-4b60-9a43-fcfc2e92ad50}</Project>
       <Name>AzureSBLite.Net</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

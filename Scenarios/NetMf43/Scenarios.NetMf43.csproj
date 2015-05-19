@@ -39,6 +39,9 @@
     <Compile Include="Program.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="Amqp.NetMF">
+      <HintPath>..\..\packages\AMQPNetLite.1.0.0\lib\netmf43\Amqp.NetMF.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.SPOT.Native" />
     <Reference Include="Microsoft.SPOT.Net" />
     <Reference Include="Microsoft.SPOT.Net.Security" />
@@ -50,14 +53,13 @@
     <Reference Include="System.Net.Security" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\amqpnetlite\src\Amqp.NetMF43.csproj">
-      <Project>{5D8F78FC-0719-495F-9AD0-1EDD7EC9AA19}</Project>
-      <Name>Amqp.NetMF43</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\azuresblite\AzureSBLite\AzureSBLite.NetMf43.csproj">
+    <ProjectReference Include="..\..\..\azuresblite\AzureSBLite\NetMf43\AzureSBLite.NetMf43.csproj">
       <Project>{0753D770-B230-4195-BA31-53B0DBCC0AD6}</Project>
       <Name>AzureSBLite.NetMf43</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Condition="EXISTS('$(NetMfTargetsBaseDir)$(TargetFrameworkVersion)\CSharp.Targets')" Project="$(NetMfTargetsBaseDir)$(TargetFrameworkVersion)\CSharp.Targets" />
   <Import Condition="!EXISTS('$(NetMfTargetsBaseDir)$(TargetFrameworkVersion)\CSharp.Targets')" Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
