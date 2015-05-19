@@ -20,11 +20,11 @@ Simple scenarios covered are :
 * Send to a Queue and receive from a ReplyTo Queue 
 * Send to a Topic and receive from Sunscriptions
 
-To build these examples you need following libraries, you can clone from following repositories :
+To build these examples you need following libraries :
 
-* *AMQP SB Lite* : http://azuresblite.codeplex.com
+* *AMQP SB Lite* : http://azuresblite.codeplex.com/ (you need to clone from here)
 
-* *AMQP .Net Lite* : http://amqpnetlite.codeplex.com/
+* *AMQP .Net Lite* : http://amqpnetlite.codeplex.com/ (related Nuget packages are already referenced)
 
 The .Net Micro Framework project is build for running on Netduino 3 Wi-Fi.
 
