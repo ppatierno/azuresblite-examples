@@ -27,3 +27,5 @@ To build these examples you need following libraries, you can clone from followi
 * *AMQP .Net Lite* : http://amqpnetlite.codeplex.com/
 
 The .Net Micro Framework project is build for running on Netduino 3 Wi-Fi.
+
+The IoTEventHubProcessor project is an example for receiving event data sent using event hub following above scenarios.
