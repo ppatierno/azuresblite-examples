@@ -120,7 +120,9 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Scenarios.WinRT_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
@@ -149,7 +151,7 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Amqp.Store">
-      <HintPath>..\..\packages\AMQPNetLite.1.0.0\lib\windows8\Amqp.Store.dll</HintPath>
+      <HintPath>..\..\packages\AMQPNetLite.1.0.0.1\lib\windows8\Amqp.Store.dll</HintPath>
     </Reference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">
