@@ -165,7 +165,29 @@ namespace AzureSBLite.Examples
             factory.Close();
         }
 
-        public void Scenario8_QueueSend(string queue)
+        public void Scenario8_EventHubReceiveFromPartitionDateTimeOffset(string eventHubEntity, string partitionId, DateTime dateTimeOffset)
+        {
+            ServiceBusConnectionStringBuilder builder = new ServiceBusConnectionStringBuilder(this.ConnectionString);
+            builder.TransportType = TransportType.Amqp;
+
+            MessagingFactory factory = MessagingFactory.CreateFromConnectionString(this.ConnectionString);
+
+            EventHubClient client = factory.CreateEventHubClient(eventHubEntity);
+            EventHubConsumerGroup group = client.GetDefaultConsumerGroup();
+
+            EventHubReceiver receiver = group.CreateReceiver(partitionId, dateTimeOffset);
+
+            while (true)
+            {
+                EventData data = receiver.Receive();
+            }
+
+            receiver.Close();
+            client.Close();
+            factory.Close();
+        }
+
+        public void Scenario9_QueueSend(string queue)
         {
             ServiceBusConnectionStringBuilder builder = new ServiceBusConnectionStringBuilder(this.ConnectionString);
             builder.TransportType = TransportType.Amqp;
@@ -184,9 +206,9 @@ namespace AzureSBLite.Examples
             factory.Close();
         }
 
-        public void Scenario9_QueueRequestResponse(string queue, string replyTo)
+        public void Scenario10_QueueRequestResponse(string queue, string replyTo)
         {
-            WorkerThread receiverThread = new WorkerThread(this.Scenario10_QueueReceiver);
+            WorkerThread receiverThread = new WorkerThread(this.Scenario11_QueueReceiver);
             receiverThread.Start(queue);
 
             ServiceBusConnectionStringBuilder builder = new ServiceBusConnectionStringBuilder(this.ConnectionString);
@@ -214,7 +236,7 @@ namespace AzureSBLite.Examples
             factory.Close();
         }
 
-        private void Scenario10_QueueReceiver(object obj)
+        private void Scenario11_QueueReceiver(object obj)
         {
             string queue = (string)obj;
 
@@ -243,12 +265,12 @@ namespace AzureSBLite.Examples
             }
         }
 
-        public void Scenario11_TopicSend(string topic, string subscription1, string subscription2)
+        public void Scenario12_TopicSend(string topic, string subscription1, string subscription2)
         {
-            WorkerThread sub1Thread = new WorkerThread(this.Scenario12_SubscriptionReceiver);
+            WorkerThread sub1Thread = new WorkerThread(this.Scenario13_SubscriptionReceiver);
             sub1Thread.Start(new Scenarios.TopicSub() { Topic = topic, Sub = subscription1 });
 
-            WorkerThread sub2Thread = new WorkerThread(this.Scenario12_SubscriptionReceiver);
+            WorkerThread sub2Thread = new WorkerThread(this.Scenario13_SubscriptionReceiver);
             sub2Thread.Start(new Scenarios.TopicSub() { Topic = topic, Sub = subscription2 });
 
             ServiceBusConnectionStringBuilder builder = new ServiceBusConnectionStringBuilder(this.ConnectionString);
@@ -270,7 +292,7 @@ namespace AzureSBLite.Examples
 
         class TopicSub { public string Topic; public string Sub; }
 
-        public void Scenario12_SubscriptionReceiver(object obj)
+        public void Scenario13_SubscriptionReceiver(object obj)
         {
             Scenarios.TopicSub topicSub = (Scenarios.TopicSub)obj;
 

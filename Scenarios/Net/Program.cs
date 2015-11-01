@@ -13,6 +13,7 @@ namespace AzureSBLite.Examples
         static string EVENT_HUB_PARTITION_ID = "[EVENT_HUB_PARTITION_ID]";
         static string EVENT_HUB_PARTITION_KEY = "[EVENT_HUB_PARTITION_KEY]";
         static string EVENT_HUB_PARTITION_OFFSET = "[EVENT_HUB_PARTITION_OFFSET]";
+        static DateTime EVENT_HUB_PARTITION_DATE_TIME_OFFSET;
         static string EVENT_HUB_PUBLISHER_NAME = "[EVENT_HUB_PUBLISHER_NAME]";
 
         static string QUEUE_SEND = "[QUEUE_SEND]";
@@ -61,14 +62,19 @@ namespace AzureSBLite.Examples
                 EVENT_HUB_NAME, 
                 EVENT_HUB_PARTITION_ID, 
                 EVENT_HUB_PARTITION_OFFSET);
+
+            scenarios.Scenario8_EventHubReceiveFromPartitionDateTimeOffset(
+                EVENT_HUB_NAME,
+                EVENT_HUB_PARTITION_ID,
+                EVENT_HUB_PARTITION_DATE_TIME_OFFSET);
             
-            scenarios.Scenario8_QueueSend(QUEUE_SEND);
+            scenarios.Scenario9_QueueSend(QUEUE_SEND);
             
-            scenarios.Scenario9_QueueRequestResponse(
+            scenarios.Scenario10_QueueRequestResponse(
                 QUEUE_SEND, 
                 QUEUE_REPLYTO);
             
-            scenarios.Scenario11_TopicSend(
+            scenarios.Scenario12_TopicSend(
                 TOPIC_SEND, 
                 SUBSCRIPTION_ONE, 
                 SUBSCRIPTION_TWO);
