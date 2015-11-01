@@ -15,7 +15,8 @@ Simple scenarios covered are :
 * Send to Event Hub to a publisher with token 
 * Send to Event Hub with a partition key 
 * Receive from Event Hub from specific partition 
-* Receive from Event Hub from specific partition with offset 
+* Receive from Event Hub from specific partition with offset
+* Receive from Event Hub from specific partition with date/time offset
 * Simple send to a Queue 
 * Send to a Queue and receive from a ReplyTo Queue 
 * Send to a Topic and receive from Sunscriptions
